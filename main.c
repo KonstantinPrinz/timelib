@@ -105,47 +105,11 @@ int exists_date(int day, int month, int year)
 
     if(day <= 0) return 0;
 
-    for(int i = 0; i < month-1; i++)
+    for(int i = 0; i < 12; i++)
     {
-        switch(month)
-        {
-        case 1:
-            if(day > daysPerMonth[0]) return 0;
-            break;
-        case 2:
-            if(day > daysPerMonth[1]) return 0;
-            break;
-        case 3:
-            if(day > daysPerMonth[2]) return 0;
-            break;
-        case 4:
-            if(day > daysPerMonth[3]) return 0;
-            break;
-        case 5:
-            if(day > daysPerMonth[4]) return 0;
-            break;
-        case 6:
-            if(day > daysPerMonth[5]) return 0;
-            break;
-        case 7:
-            if(day > daysPerMonth[6]) return 0;
-            break;
-        case 8:
-            if(day > daysPerMonth[7]) return 0;
-            break;
-        case 9:
-            if(day > daysPerMonth[8]) return 0;
-            break;
-        case 10:
-            if(day > daysPerMonth[9]) return 0;
-            break;
-        case 11:
-            if(day > daysPerMonth[10]) return 0;
-            break;
-        case 12:
-            if(day > daysPerMonth[11]) return 0;
-            break;
-        }
+        if((month-1) == i)
+            if(day > daysPerMonth[month-1])
+                return 0;
     }
 
     if(month > 12 || month < 1) return 0;
@@ -175,6 +139,6 @@ int main()
     scanf("%i", &tag);
     fflush(stdin);
 
-    printf("Tag des Jahres: %i\n", day_of_the_year(tag, monat, jahr));
+    printf("Existiert das Datum?: %i\n", exists_date(tag, monat, jahr));
     return 0;
 }
