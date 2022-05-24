@@ -11,26 +11,27 @@
 
 int main()
 {
-    int jahr = 0;
-    int monat = 0;
-    int tag = 0;
+    struct Datum datum;
+    datum.day = 0;
+    datum.month = 0;
+    datum.year = 0;
 
     // Eingaben:
     // Jahr
     printf("Eingabe des Jahres: ");
-    scanf("%i", &jahr);
+    scanf("%i", &datum.year);
     fflush(stdin);
 
     // Monat
     printf("Eingabe des Monats: ");
-    scanf("%i", &monat);
+    scanf("%i", &datum.month);
     fflush(stdin);
 
     // Tag
     printf("Eingabe des Tages: ");
-    scanf("%i", &tag);
+    scanf("%i", &datum.day);
     fflush(stdin);
 
-    printf("Wochentag: %i\n", get_weekday(tag, monat, jahr));
+    printf("Wochentag: %i\n", get_weekday(datum));
     return 0;
 }
