@@ -38,17 +38,20 @@ int is_leapyear(int year)
             {
                 //Ist ein Schaltjahr
                 return 1;
-            } else
+            }
+            else
             {
-                 //kein Schaltjahr
+                //kein Schaltjahr
                 return 0;
             }
-        } else
+        }
+        else
         {
             //Ist ein Schaltjahr
             return 1;
         }
-    } else
+    }
+    else
     {
         //kein Schaltjahr
         return 0;

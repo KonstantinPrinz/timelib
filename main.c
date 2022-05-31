@@ -8,7 +8,6 @@
 #include <stdlib.h>
 #include "bibliothek.h"
 
-
 int main()
 {
     struct Datum datum;
@@ -33,5 +32,8 @@ int main()
     fflush(stdin);
 
     printf("Wochentag: %i\n", get_weekday(datum));
+    printf("Tag des Jahres: %i\n", day_of_the_year(datum));
+    printf("Schaltjahr?: %i\n", is_leapyear(datum.year));
+    printf("Tage des Monats: %i\n", get_days_for_month(datum));
     return 0;
 }
